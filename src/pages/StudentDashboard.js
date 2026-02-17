@@ -65,6 +65,8 @@ const StudentDashboard = () => {
 
   const role = data.length > 0 ? data[0].role : "Not Selected";
 
+  const totalWatchTime = data.reduce((acc, curr) => acc + (curr.watchTime || 0), 0);
+
   /* ================= CHART DATA ================= */
 
   const skillData = [
@@ -142,8 +144,8 @@ const StudentDashboard = () => {
           <Col md={3}>
             <Card className="shadow" style={{ borderRadius: "15px" }}>
               <Card.Body>
-                <h5>Tests Attempted</h5>
-                <h3 className="fw-bold">{testsAttempted}</h3>
+                <h5>Watch Time</h5>
+                <h3 className="fw-bold">{Math.round(totalWatchTime / 60)} mins</h3>
               </Card.Body>
             </Card>
           </Col>

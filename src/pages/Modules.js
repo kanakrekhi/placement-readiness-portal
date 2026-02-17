@@ -63,7 +63,7 @@ const moduleData = {
     ]
   },
 
- " psychologist": {
+  "psychologist": {
     title: "Psychology Modules",
     icon: <FaBrain size={50} className="text-warning" />,
     modules: [
@@ -73,7 +73,7 @@ const moduleData = {
     ]
   },
 
- "lawyer": {
+  "lawyer": {
     title: "Lawyer Modules",
     icon: <FaBalanceScale size={50} className="text-warning" />,
     modules: [

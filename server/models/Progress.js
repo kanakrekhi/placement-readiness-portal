@@ -5,6 +5,7 @@ const progressSchema = new mongoose.Schema({
   role: { type: String, required: true },
   module: { type: String, required: true },
   score: { type: Number, default: 0 },
+  watchTime: { type: Number, default: 0 }, // in seconds or minutes
   verdict: { type: String, enum: ["Eligible", "Not Eligible"], default: "Not Eligible" },
   date: { type: Date, default: Date.now }
 });
