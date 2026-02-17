@@ -14,7 +14,7 @@ const Signup = () => {
     // your signup logic
     alert(`Name: ${name}\nEmail: ${email}\nPassword: ${password}`);
 
-    navigate("/modules"); // redirect after signup
+    navigate("/login"); // redirect after signup
   };
 
   return (

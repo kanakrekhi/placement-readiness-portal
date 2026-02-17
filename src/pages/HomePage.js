@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Carousel } from "react-bootstrap";
+import { Carousel, Nav } from "react-bootstrap"; // ✅ Added Nav import
 import { motion } from "framer-motion";
+import { FaCode } from "react-icons/fa";
 
 const HomePage = () => {
   return (
     <div style={{ fontFamily: "Poppins, sans-serif", backgroundColor: "#0f0f0f" }}>
-
       {/* NAVBAR */}
       <motion.nav
         className="navbar navbar-expand-lg navbar-dark shadow-lg sticky-top"
@@ -19,7 +19,6 @@ const HomePage = () => {
         transition={{ duration: 0.8, type: "spring" }}
       >
         <div className="container d-flex justify-content-between align-items-center">
-
           {/* LOGO + BRAND */}
           <div className="d-flex align-items-center">
             <img
@@ -39,7 +38,6 @@ const HomePage = () => {
 
           {/* NAV LINKS */}
           <ul className="navbar-nav d-flex flex-row">
-
             {/* HOME */}
             <motion.li className="nav-item mx-3" whileHover={{ scale: 1.2 }}>
               <Link
@@ -51,7 +49,7 @@ const HomePage = () => {
               </Link>
             </motion.li>
 
-            {/* ABOUT → FIXED */}
+            {/* ABOUT */}
             <motion.li className="nav-item mx-3" whileHover={{ scale: 1.2 }}>
               <Link
                 className="nav-link fw-semibold"
@@ -73,17 +71,6 @@ const HomePage = () => {
               </Link>
             </motion.li>
 
-            {/* MODULES */}
-            <motion.li className="nav-item mx-3" whileHover={{ scale: 1.2 }}>
-              <Link
-                className="nav-link fw-semibold"
-                style={{ fontSize: "1.1rem", color: "#fff" }}
-                to="/modules"
-              >
-                Modules
-              </Link>
-            </motion.li>
-
             {/* ROLES */}
             <motion.li className="nav-item mx-3" whileHover={{ scale: 1.2 }}>
               <Link
@@ -92,6 +79,34 @@ const HomePage = () => {
                 to="/roles"
               >
                 Roles
+              </Link>
+            </motion.li>
+
+            {/* PROGRAMMING ENVIRONMENT */}
+            <motion.li className="nav-item mx-3" whileHover={{ scale: 1.2 }}>
+              <Link
+                className="nav-link fw-semibold"
+                style={{
+                  fontSize: "1.1rem",
+                  color: "#ffd700",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "5px"
+                }}
+                to="/programming-environment"
+              >
+                <FaCode /> Programming Env
+              </Link>
+            </motion.li>
+
+            {/* RESUME ANALYZER (new) */}
+            <motion.li className="nav-item mx-3" whileHover={{ scale: 1.2 }}>
+              <Link
+                className="nav-link fw-semibold"
+                style={{ fontSize: "1.1rem", color: "#fff" }}
+                to="/resume-analyzer" // ✅ Fixed link to correct route
+              >
+                Resume Analyzer
               </Link>
             </motion.li>
 
@@ -158,7 +173,6 @@ const HomePage = () => {
       {/* CAROUSEL */}
       <div className="container my-5">
         <Carousel fade indicators={false} interval={4000}>
-          
           {/* SLIDE 1 */}
           <Carousel.Item>
             <div
@@ -257,10 +271,8 @@ const HomePage = () => {
               </div>
             </div>
           </Carousel.Item>
-
         </Carousel>
       </div>
-
     </div>
   );
 };
